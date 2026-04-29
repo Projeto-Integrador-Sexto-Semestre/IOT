@@ -7,9 +7,9 @@
 #include <HTTPClient.h>
 
 
-#define BOT_TOKEN "7717880141:AAHdyiCl79EOjFxp1-Uc1Y6YeVLfCdefGbI"
-#define CHAT_ID_1 "7306290887"   // Seu ID
-#define CHAT_ID_2 "5946523068"   // ID do seu amigo
+#define BOT_TOKEN "SEU_TOKEN_AQUI"
+#define CHAT_ID_1 "SEU_CHAT_ID"
+#define CHAT_ID_2 "CHAT_ID_AMIGO"
 
 // ===== DHT22 =====
 #define DHTPIN 15
