@@ -5,8 +5,8 @@
 #include <WebServer.h>
 
 // ===== WiFi =====
-const char* WIFI_SSID = "GARCIA_2.G";
-const char* WIFI_PASS = "Garcia141819";
+const char* WIFI_SSID = "SUA_REDE_WIFI";
+const char* WIFI_PASS = "SENHA_DA_SUA_REDE_WIFI";
 
 // ===== DHT11 =====
 #define DHTPIN    15
