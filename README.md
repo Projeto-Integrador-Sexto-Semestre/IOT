@@ -1,8 +1,39 @@
 # Smart Home IoT - ESP32
 
-Firmware Arduino para o módulo IoT do projeto **PI Smart Home**. O sketch roda em um ESP32, coleta leituras de temperatura, luminosidade e presença, aciona relés para ventilador e luz, publica telemetria via MQTT e expõe endpoints HTTP locais para operações diretas.
+## Informações do Projeto
+
+**Nome do Projeto:** SMARTHOME
+
+**Integrantes do Projeto:**
+- Victor Daniel Araújo Silva
+- Gustavo Henrique Santana dos Santos
+- Camille Alves Cruz
+- Lucas Garcia Lima
+- Raphael Micucci Bomfim
+- Isaías Belarmina de Souza
+
+**Tema Escolhido:** Sistema de Monitoramento de Casa Inteligente (Smart Home)
+
+## Descrição do Problema Resolvido
+
+Atualmente, muitas residências possuem dispositivos inteligentes e sensores capazes de coletar informações sobre o ambiente, porém essas informações nem sempre ficam centralizadas em uma única plataforma, dificultando o monitoramento e o gerenciamento dos dispositivos. Este projeto propõe uma plataforma unificada para monitorar dispositivos e sensores, permitindo o acompanhamento em tempo real, o gerenciamento dos equipamentos e o recebimento de alertas quando eventos importantes forem detectados.
+
+## Divisão de Responsabilidades
+
+| Integrante | Responsabilidade |
+|---|---|
+| Victor Daniel Araújo Silva | Backend API |
+| Camille Alves Cruz | Backend API e Testes Unitários |
+| Lucas Garcia Lima | IoT e JWT (API) |
+| Isaías Belarmina de Souza | Mobile e Web |
+| Gustavo Henrique Santana dos Santos | Testes |
+| Raphael Micucci Bomfim | Documentação |
+
+---
 
 ## Visão Geral
+
+Firmware Arduino para o módulo IoT do projeto **PI Smart Home**. O sketch roda em um ESP32, coleta leituras de temperatura, luminosidade e presença, aciona relés para ventilador e luz, publica telemetria via MQTT e expõe endpoints HTTP locais para operações diretas.
 
 Este repositório representa a camada física do sistema de casa inteligente. O ESP32 atua como gateway dos sensores e atuadores:
 
@@ -60,6 +91,37 @@ Também é possível ajustar os limites padrão:
 int LDR_THRESHOLD = 1500;
 float TEMP_THRESHOLD = 28.0;
 ```
+
+## Variáveis de Ambiente Necessárias
+
+Configure as seguintes variáveis no arquivo `main.ino` antes de gravar o firmware:
+
+| Variável | Descrição | Tipo |
+|---|---|---|
+| `WIFI_SSID` | Nome da rede Wi-Fi | String |
+| `WIFI_PASS` | Senha da rede Wi-Fi | String |
+| `MQTT_BROKER` | Endereço do broker MQTT | String |
+| `MQTT_PORT` | Porta do broker MQTT | Inteiro |
+| `MQTT_USER` | Usuário MQTT (opcional) | String |
+| `MQTT_PASS` | Senha MQTT | String |
+| `LDR_THRESHOLD` | Limite de luminosidade (padrão: 1500) | Inteiro |
+| `TEMP_THRESHOLD` | Limite de temperatura (padrão: 28.0°C) | Float |
+
+## Exemplos de Configuração para Teste
+
+**Configuração Local (protótipo):**
+```cpp
+const char* WIFI_SSID = "SEU_SSID_AQUI";
+const char* WIFI_PASS = "SUA_SENHA_AQUI";
+const char* MQTT_BROKER = "broker.local";
+const uint16_t MQTT_PORT = 1883;
+const char* MQTT_USER = "mqtt_user";
+const char* MQTT_PASS = "mqtt_password";
+```
+
+**Limites de Sensores (padrão):**
+- LDR_THRESHOLD = 1500 (luminosidade)
+- TEMP_THRESHOLD = 28.0°C (temperatura)
 
 ## Como Executar
 
